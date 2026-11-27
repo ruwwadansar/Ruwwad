@@ -1,3 +1,4 @@
+
 /* =========================================
    RUWWAD WEBSITE
    Main CSS File
@@ -2087,7 +2088,7 @@ footer .brand b {
     135deg,
     #6b9ef0,
     #9272ea,
-    #cb71e1
+    #bd59d5
   );
   animation: liquidMove 9s ease-in-out infinite alternate;
   will-change: transform, border-radius;
@@ -2224,5 +2225,214 @@ footer .brand b {
 
   .union-info {
     margin-left: 0;
+  }
+}
+
+/* =================================
+   RUWWAD ADVICE — LANDSCAPE SLIDER
+   One card visible at a time
+================================= */
+
+.wisdom-window {
+  overflow: hidden;
+  width: 100%;
+}
+
+.wisdom-track {
+  display: flex;
+  width: 100%;
+}
+
+.wisdom-card {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  align-items: center;
+  gap: 30px;
+
+  padding: 30px;
+  min-height: 300px;
+  border-radius: 24px;
+}
+
+/* Teacher photo */
+.wisdom-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* Advice content */
+.wisdom-card > div {
+  min-width: 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .wisdom-card {
+    grid-template-columns: 32% 1fr;
+    gap: 14px;
+    padding: 14px;
+    min-height: 190px;
+  }
+
+  .wisdom-card img {
+    height: 155px;
+    border-radius: 12px;
+  }
+}
+
+/* =========================================
+   RUWWAD ADVICE SLIDER — NEW NAVIGATION
+   ========================================= */
+
+.wisdom-slider {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr) 46px;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.wisdom-window {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wisdom-track {
+  display: flex;
+  gap: 0;
+  transition: transform 0.65s cubic-bezier(.22,.8,.25,1);
+  will-change: transform;
+}
+
+.wisdom-card {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 34% minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  padding: 30px;
+  min-height: 300px;
+}
+
+/* Landscape advisor photo */
+.wisdom-photo {
+  width: 100%;
+  height: 245px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.wisdom-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Modern circular navigation arrows */
+.wisdom-arrow {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(21, 87, 192, .16);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .85);
+  color: var(--navy);
+  font-size: 15px;
+  cursor: pointer;
+  transition: .3s ease;
+  box-shadow: 0 5px 18px rgba(8, 26, 67, .07);
+}
+
+.wisdom-arrow:hover:not(:disabled) {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+  transform: scale(1.08);
+}
+
+.wisdom-arrow:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+
+/* Simple counter — no progress line */
+.wisdom-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.wisdom-counter {
+  color: var(--navy);
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.wisdom-caption {
+  color: #8993a4;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  .wisdom-slider {
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    gap: 7px;
+  }
+
+  .wisdom-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .wisdom-card {
+    grid-template-columns: 34% minmax(0, 1fr);
+    gap: 13px;
+    padding: 13px;
+    min-height: 190px;
+  }
+
+  .wisdom-photo {
+    height: 155px;
+    border-radius: 12px;
+  }
+
+  .wisdom-content h3 {
+    font-size: 15px;
+  }
+
+  .wisdom-content p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .wisdom-bottom {
+    margin-top: 18px;
+  }
+
+  .wisdom-caption {
+    font-size: 8px;
+    letter-spacing: 1px;
   }
 }
