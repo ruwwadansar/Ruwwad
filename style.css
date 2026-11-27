@@ -2195,3 +2195,35 @@ footer .brand b {
     animation: none;
   }
 }
+@media (max-width: 768px) {
+  .brand-name,
+  .logo-text,
+  .navbar-brand {
+    font-weight: 900 !important;
+    -webkit-text-stroke: 0.5px currentColor;
+  }
+}
+/* RUWWAD MOBILE NAVBAR IMPROVEMENT */
+@media (max-width: 620px) {
+
+  .brand {
+    gap: 6px;
+  }
+
+  .brand > span {
+    margin-left: 0;
+  }
+
+  .brand b {
+    font-family: 'Arial Black', 'Manrope', sans-serif;
+    font-size: 18px;
+    font-weight: 1000;
+    letter-spacing: -1px;
+    -webkit-text-stroke: 0.7px #000;
+    line-height: 1;
+  }
+
+  .union-info {
+    margin-left: 0;
+  }
+}
