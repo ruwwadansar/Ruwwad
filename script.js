@@ -22,58 +22,42 @@ document.querySelectorAll(".navlinks a").forEach(link => {
 });
 
 
+
 /* WORDS OF WISDOM SLIDER */
 
 document.querySelectorAll(".wisdom-slider").forEach(slider => {
-
   const track = slider.querySelector(".wisdom-track");
   const cards = [...slider.querySelectorAll(".wisdom-card")];
   const next = slider.querySelector(".wisdom-next");
   const prev = slider.querySelector(".wisdom-prev");
-
-  const counter = document.querySelector(".wisdom-counter");
-  const progress = document.querySelector(".wisdom-progress span");
+  const counter = slider.parentElement.querySelector(".wisdom-counter");
 
   let current = 0;
 
-  function visibleCards() {
-    if (window.innerWidth <= 620) return 1;
-    if (window.innerWidth <= 950) return 2;
-    return 3;
-  }
+  if (!track || cards.length === 0 || !next || !prev) return;
 
   function updateSlider() {
-    const visible = visibleCards();
-    const maxIndex = Math.max(0, cards.length - visible);
+    // Always show one advice card at a time.
+    const maxIndex = cards.length - 1;
+    current = Math.max(0, Math.min(current, maxIndex));
 
-    current = Math.min(current, maxIndex);
-
-    const gap = parseFloat(getComputedStyle(track).gap) || 0;
     const cardWidth = cards[0].getBoundingClientRect().width;
-    const move = (cardWidth + gap) * current;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
-    track.style.transform = `translateX(-${move}px)`;
+    track.style.transform =
+      `translateX(-${current * (cardWidth + gap)}px)`;
 
     if (counter) {
       counter.textContent =
         `${String(current + 1).padStart(2, "0")} / ${String(cards.length).padStart(2, "0")}`;
     }
 
-    if (progress) {
-      progress.style.width =
-        `${((current + visible) / cards.length) * 100}%`;
-    }
-
     prev.disabled = current === 0;
-    next.disabled = current >= maxIndex;
-
-    prev.style.opacity = prev.disabled ? ".4" : "1";
-    next.style.opacity = next.disabled ? ".4" : "1";
+    next.disabled = current === maxIndex;
   }
 
   next.addEventListener("click", () => {
-    const maxIndex = Math.max(0, cards.length - visibleCards());
-    if (current < maxIndex) {
+    if (current < cards.length - 1) {
       current++;
       updateSlider();
     }
@@ -89,5 +73,4 @@ document.querySelectorAll(".wisdom-slider").forEach(slider => {
   window.addEventListener("resize", updateSlider);
 
   updateSlider();
-
 });
