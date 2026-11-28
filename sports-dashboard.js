@@ -1,0 +1,28 @@
+(() => {
+ const d=window.RUWWAD_SPORTS||{groups:[],points:{first:5,second:3,third:1},events:[]};
+ const $=id=>document.getElementById(id), medals={1:"🥇",2:"🥈",3:"🥉"};
+ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const done=d.events.filter(e=>e.status==="finished"), scores=Object.fromEntries(d.groups.map(g=>[g.name,0]));
+ done.forEach(e=>(e.winners||[]).forEach(w=>{if(scores[w.group]!==undefined)scores[w.group]+=Number(d.points[["","first","second","third"][w.place]]||0)}));
+ const ranked=[...d.groups].sort((a,b)=>scores[b.name]-scores[a.name]), total=Object.values(scores).reduce((a,b)=>a+b,0);
+ const stat=(n,t)=>`<div class="sports-stat"><strong>${n}</strong><span>${t}</span></div>`;
+ $("pageStats").innerHTML=stat(d.events.length,"Total sports items")+stat(done.length,"Completed")+stat(d.totalStudents||"—","Total students");
+ const podium=e=>{if(!(e.winners||[]).length)return '<p class="sports-no-result">Results will be added after the event.</p>';return [1,2,3].map(p=>{const w=e.winners.find(x=>+x.place===p);return w?`<div class="sports-winner ${["","first","second","third"][p]}"><span class="sports-medal">${medals[p]}</span><div><strong>${esc(w.name)}</strong><small>${esc(w.group)} Group</small></div></div>`:""}).join("")};
+ $("eventGrid").innerHTML=d.events.map(e=>`<article class="sports-event-card" data-event="${esc(e.name).toLowerCase()}"><div class="sports-event-top"><h3>${esc(e.name)}</h3><span class="sports-status ${e.status==="finished"?"finished":""}">${e.status==="finished"?"FINISHED":"UPCOMING"}</span></div><div class="sports-podium">${e.status==="finished"?podium(e):'<p class="sports-no-result">Event results will be published here.</p>'}</div></article>`).join("");
+ $("emptyNote").style.display=d.events.length?"none":"block";
+ let angle=0;const stops=d.groups.map(g=>{const size=total?scores[g.name]/total*360:90,start=angle;angle+=size;return `${g.color} ${start}deg ${angle}deg`});
+ $("groupDonut").style.background=`conic-gradient(${stops.join(",")})`;
+ $("leadingGroup").textContent=total?ranked[0].name.toUpperCase():"—";$("leadingPoints").textContent=`${total?scores[ranked[0].name]:0} POINTS`;
+ $("chartLegend").innerHTML=d.groups.map(g=>`<span class="sports-legend-item"><i style="background:${g.color}"></i>${g.name}</span>`).join("");
+ $("groupList").innerHTML=ranked.map(g=>`<div class="sports-group-row"><span class="sports-group-name"><i class="sports-group-dot" style="background:${g.color}"></i>${g.name} Group</span><strong>${scores[g.name]} pts</strong></div>`).join("");
+ $("liveStats").innerHTML=`<div class="sports-summary"><strong>${d.events.length}</strong><span>TOTAL EVENTS</span></div><div class="sports-summary"><strong>${done.length}</strong><span>COMPLETED</span></div><div class="sports-summary"><strong>${d.totalStudents||"—"}</strong><span>TOTAL STUDENTS</span></div>`;
+ const renderHistory=()=>{const q=$("historySearch").value.toLowerCase(),g=$("groupFilter").value;const list=done.filter(e=>[e.name,...(e.winners||[]).map(w=>w.name+" "+w.group)].join(" ").toLowerCase().includes(q)&&(g==="all"||(e.winners||[]).some(w=>w.group===g)));$("historyGrid").innerHTML=list.map(e=>`<article class="sports-history-card"><h3>${esc(e.name)}</h3><div class="sports-podium">${podium(e)}</div></article>`).join("");$("historyEmpty").style.display=list.length?"none":"block"};
+ renderHistory();$("historySearch").addEventListener("input",renderHistory);$("groupFilter").addEventListener("change",renderHistory);
+ $("eventSearch").addEventListener("input",e=>document.querySelectorAll(".sports-event-card").forEach(c=>c.style.display=c.dataset.event.includes(e.target.value.toLowerCase())?"":"none"));
+ const open=id=>{$(id).classList.add("open");$(id).setAttribute("aria-hidden","false");document.body.classList.add("sports-modal-open")};
+ const close=id=>{$(id).classList.remove("open");$(id).setAttribute("aria-hidden","true");if(!document.querySelector(".sports-modal.open"))document.body.classList.remove("sports-modal-open")};
+ $("openLive").onclick=()=>open("liveModal");$("openHistory").onclick=()=>{renderHistory();open("historyModal")};
+ $("historyFromLive").onclick=()=>{close("liveModal");renderHistory();open("historyModal")};
+ document.querySelectorAll("[data-close]").forEach(x=>x.onclick=()=>close(x.dataset.close));
+ document.addEventListener("keydown",e=>{if(e.key==="Escape")document.querySelectorAll(".sports-modal.open").forEach(m=>close(m.id))});
+})();
