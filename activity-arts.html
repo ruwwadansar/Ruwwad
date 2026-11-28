@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,84 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Arts & Culture | RUWWAD</title>
 <link rel="icon" type="image/png" href="images/ruwwad-bird.png">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<style>
-.upcoming-section {
-  padding: 90px 0 110px;
-  text-align: center;
-}
-
-.upcoming-card {
-  max-width: 760px;
-  margin: 35px auto 0;
-  padding: 65px 25px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--paper);
-}
-
-.upcoming-icon {
-  width: 85px;
-  height: 85px;
-  margin: 0 auto 25px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: #f1e9ff;
-  color: #8950c8;
-  font-size: 34px;
-}
-
-.upcoming-card h2 {
-  margin-bottom: 15px;
-}
-
-.upcoming-card p {
-  max-width: 520px;
-  margin: 0 auto;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.upcoming-label {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 9px 18px;
-  border-radius: 30px;
-  background: #f1e9ff;
-  color: #8950c8;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.back-link {
-  display: inline-block;
-  margin-top: 35px;
-  color: var(--blue);
-  font-weight: 700;
-  font-size: 13px;
-}
-
-@media(max-width:620px) {
-  .upcoming-section {
-    padding: 65px 0 80px;
-  }
-
-  .upcoming-card {
-    padding: 45px 20px;
-  }
-}
-</style>
+<link rel="stylesheet" href="arts-dashboard.css">
 </head>
-
 <body>
 
 <div class="topline">
@@ -91,93 +19,136 @@
 </div>
 
 <header class="header">
-<nav class="wrap nav">
+  <nav class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="images/ruwwad-logo.jpg" alt="RUWWAD">
+      <span>
+        <b>RUWWAD</b>
+        <div class="union-info">
+          <strong>STUDENT'S UNION 2026-27</strong>
+          <span>RUN BY: ANSAR ARABIC COLLEGE, VALAVANNUR</span>
+          <span>+91 75580 28803 | +91 91880 40448</span>
+        </div>
+      </span>
+    </a>
 
-  <a class="brand" href="index.html">
-    <img src="images/ruwwad-logo.jpg" alt="RUWWAD">
-    <span>
-      <b>RUWWAD</b>
-      <div class="union-info">
-        <strong>STUDENT'S UNION 2026-27</strong>
-        <span>RUN BY: ANSAR ARABIC COLLEGE, VALAVANNUR</span>
-        <span>+91 75580 28803 | +91 91880 40448</span>
-      </div>
-    </span>
-  </a>
+    <button class="menu" aria-label="Toggle menu" aria-expanded="false">
+      <i></i><i></i><i></i>
+    </button>
 
-  <button class="menu" aria-label="Toggle menu" aria-expanded="false">
-    <i></i><i></i><i></i>
-  </button>
-
-  <div class="navlinks">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="team.html">Our Team</a>
-    <a href="activities.html">Activities</a>
-  </div>
-
-</nav>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Our Team</a>
+      <a href="activities.html">Activities</a>
+    </div>
+  </nav>
 </header>
 
 <main>
+  <section class="pagehero">
+    <div class="wrap">
+      <p class="eyebrow">RUWWAD · CAMPUS LIFE</p>
+      <h1>Arts & <span>Culture.</span></h1>
+      <p>A platform for creativity, expression and talent.</p>
+    </div>
+  </section>
 
-<section class="pagehero">
-  <div class="wrap">
-    <p class="eyebrow">RUWWAD · CAMPUS LIFE</p>
-    <h1>Arts & <span>Culture.</span></h1>
-    <p>A platform for creativity, expression and talent.</p>
-  </div>
-</section>
-
-<section class="upcoming-section">
-  <div class="wrap">
-
-    <p class="eyebrow">SOMETHING IS IN THE MAKING</p>
-    <h2>Let creativity <span>take the stage.</span></h2>
-
-    <div class="upcoming-card">
-
-      <div class="upcoming-icon">
-        <i class="fa-solid fa-palette"></i>
+  <section class="arts-dashboard-section">
+    <div class="wrap arts-dashboard-wrap">
+      <div class="arts-intro">
+        <p class="eyebrow">RUWWAD ARTS FEST · 2026–27</p>
+        <h2>Where talent <span>takes the stage.</span></h2>
+        <p>Follow the latest results, group standings and event history.</p>
       </div>
 
-      <h2>Coming <span>Soon.</span></h2>
+      <div class="arts-dashboard-heading">
+        <div>
+          <span class="arts-kicker">THE SCOREBOARD</span>
+          <h2>Live <span>Standings</span></h2>
+        </div>
+        <div class="arts-live-status"><i></i> RESULTS UPDATE AUTOMATICALLY</div>
+      </div>
 
-      <p>
-        A celebration of creativity is on its way! Stay connected
-        with RUWWAD for updates about upcoming arts and cultural
-        activities.
-      </p>
+      <nav class="arts-tabs" aria-label="Arts Fest standings">
+        <button class="arts-tab active" data-view="overall" type="button">Overall Championship</button>
+        <button class="arts-tab" data-view="stage" type="button">Stage Events</button>
+        <button class="arts-tab" data-view="offstage" type="button">Off-Stage Events</button>
+        <button class="arts-tab" data-view="history" type="button">Full History</button>
+      </nav>
 
-      <span class="upcoming-label">EVENT DETAILS COMING SOON</span>
+      <section class="arts-view active" id="view-overall">
+        <div class="arts-view-heading">
+          <div>
+            <span class="arts-kicker">STAGE + OFF-STAGE</span>
+            <h3>Overall Championship</h3>
+            <p>Combined points from both categories decide the Arts Fest champion.</p>
+          </div>
+          <span class="arts-count" id="overall-event-count">0 completed events</span>
+        </div>
+        <div class="arts-champion">
+          <div class="champion-mark"><i class="fa-solid fa-trophy"></i></div>
+          <div>
+            <span class="champion-label">CURRENT OVERALL LEADER</span>
+            <strong id="champion-name">Awaiting results</strong>
+            <small id="champion-points">The overall champion will appear here</small>
+          </div>
+        </div>
+        <div class="arts-standings-grid" id="overall-standings"></div>
+        <div class="arts-category-summary">
+          <article><span class="summary-icon stage-icon"><i class="fa-solid fa-microphone-lines"></i></span><div><small>STAGE EVENTS</small><strong id="stage-total">0 pts</strong></div></article>
+          <article><span class="summary-icon offstage-icon"><i class="fa-solid fa-palette"></i></span><div><small>OFF-STAGE EVENTS</small><strong id="offstage-total">0 pts</strong></div></article>
+        </div>
+      </section>
 
+      <section class="arts-view" id="view-stage">
+        <div class="arts-view-heading">
+          <div><span class="arts-kicker">PERFORMANCE ARENA</span><h3>Stage Events Standing</h3><p>Points earned in stage programmes only.</p></div>
+          <span class="arts-count" id="stage-event-count">0 completed events</span>
+        </div>
+        <div class="arts-standings-grid" id="stage-standings"></div>
+        <div class="arts-section-subheading"><h3>Stage Event Results</h3><span>COMPLETED &amp; UPCOMING</span></div>
+        <div class="arts-event-list" id="stage-events"></div>
+      </section>
+
+      <section class="arts-view" id="view-offstage">
+        <div class="arts-view-heading">
+          <div><span class="arts-kicker">INDIVIDUAL &amp; GROUP CONTESTS</span><h3>Off-Stage Events Standing</h3><p>Points earned in off-stage programmes only.</p></div>
+          <span class="arts-count" id="offstage-event-count">0 completed events</span>
+        </div>
+        <div class="arts-standings-grid" id="offstage-standings"></div>
+        <div class="arts-section-subheading"><h3>Off-Stage Event Results</h3><span>COMPLETED &amp; UPCOMING</span></div>
+        <div class="arts-event-list" id="offstage-events"></div>
+      </section>
+
+      <section class="arts-view" id="view-history">
+        <div class="arts-view-heading">
+          <div><span class="arts-kicker">EVERY RESULT, IN ONE PLACE</span><h3>Full Event History</h3><p>Completed results from both stage and off-stage categories.</p></div>
+        </div>
+        <div class="history-filter">
+          <button class="history-filter-btn active" data-filter="all" type="button">All events</button>
+          <button class="history-filter-btn" data-filter="stage" type="button">Stage</button>
+          <button class="history-filter-btn" data-filter="offstage" type="button">Off-stage</button>
+        </div>
+        <div class="arts-event-list" id="full-history"></div>
+      </section>
     </div>
+  </section>
 
+  <div class="wrap arts-back-wrap">
     <a class="back-link" href="activities.html">← Back to Activities</a>
-
   </div>
-</section>
-
 </main>
 
 <footer>
-
   <div class="wrap foot">
-
     <div>
       <a class="brand footbrand" href="index.html">
         <img src="images/ruwwad-logo.jpg" alt="">
-        <span>
-          <b>RUWWAD</b>
-          <small>STUDENTS' UNION · 2026</small>
-        </span>
+        <span><b>RUWWAD</b><small>STUDENTS' UNION · 2026</small></span>
       </a>
-
       <p>A student union shaped by ideas and powered by people.</p>
-
-      <a href="https://www.instagram.com/ruwwad_students_union"
-         target="_blank" rel="noopener noreferrer"
-         class="instagram-link">
+      <a href="https://www.instagram.com/ruwwad_students_union" target="_blank" rel="noopener noreferrer" class="instagram-link">
         <i class="fa-brands fa-instagram"></i>Instagram
       </a>
     </div>
@@ -192,44 +163,22 @@
 
     <div>
       <h4>CONTACT</h4>
-
-      <p class="contact-item">
-        <i class="fa-solid fa-location-dot"></i>
-        <span>Ansar Arabic College, Valavannur<br>Malappuram, Kerala</span>
-      </p>
-
-      <a href="tel:+917558028803" class="contact-item">
-        <i class="fa-solid fa-phone"></i>
-        <span>+91 75580 28803</span>
-      </a>
-
-      <a href="tel:+919188040448" class="contact-item">
-        <i class="fa-solid fa-phone"></i>
-        <span>+91 91880 40448</span>
-      </a>
-
-      <a href="mailto:ruwwadansar@gmail.com" class="contact-item">
-        <i class="fa-solid fa-envelope"></i>
-        <span>ruwwadansar@gmail.com</span>
-      </a>
+      <p class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Ansar Arabic College, Valavannur<br>Malappuram, Kerala</span></p>
+      <a href="tel:+917558028803" class="contact-item"><i class="fa-solid fa-phone"></i><span>+91 75580 28803</span></a>
+      <a href="tel:+919188040448" class="contact-item"><i class="fa-solid fa-phone"></i><span>+91 91880 40448</span></a>
+      <a href="mailto:ruwwadansar@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i><span>ruwwadansar@gmail.com</span></a>
     </div>
-
   </div>
 
-  <div class="wrap copyright">
-    © 2026 RUWWAD Students' Union. All rights reserved.
-  </div>
-
+  <div class="wrap copyright">© 2026 RUWWAD Students' Union. All rights reserved.</div>
   <div class="footer-signature">
-    <span>Designed & Built by</span>
-    <a href="https://wa.me/917994060891?text=Hello%20Aamir!%20I%20visited%20the%20RUWWAD%20website%20and%20would%20like%20to%20connect%20with%20you."
-       target="_blank" rel="noopener noreferrer">
-      AAMIR MUHAMED
-    </a>
+    <span>Designed &amp; Built by</span>
+    <a href="https://wa.me/917994060891?text=Hello%20Aamir!%20I%20visited%20the%20RUWWAD%20website%20and%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener noreferrer">AAMIR MUHAMED</a>
   </div>
-
 </footer>
 
 <script src="script.js"></script>
+<script src="arts-data.js"></script>
+<script src="arts-dashboard.js"></script>
 </body>
 </html>
