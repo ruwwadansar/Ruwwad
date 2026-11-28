@@ -1742,8 +1742,19 @@ footer .brand b {
   margin-left: 10px;
   padding: 9px 18px;
   border-radius: 30px;
-  background: #e9edff;
+  background: #e9ffeb;
   color: var(--blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.upcoming-labels {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 9px 18px;
+  border-radius: 30px;
+  background: #dbfddd;
+  color: #16c79a;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -2515,226 +2526,5 @@ footer .brand b {
   .wisdom-caption {
     font-size: 8px;
     letter-spacing: 1px;
-  }
-}
-
-/* =========================================
-   RUWWAD WORDS OF WISDOM
-   LIGHT EDITORIAL DESIGN
-   ========================================= */
-
-.wisdom-section {
-  background: #f7f8fc !important;
-  color: #15213a;
-  padding: 90px 0;
-}
-
-/* Slider layout */
-.wisdom-slider {
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) 44px;
-  align-items: center;
-  gap: 18px;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.wisdom-window {
-  overflow: hidden;
-  width: 100%;
-  min-width: 0;
-}
-
-.wisdom-track {
-  display: flex;
-  gap: 0;
-  transition: transform .7s cubic-bezier(.22,.8,.25,1);
-}
-
-/* One advisor per slide */
-.wisdom-card {
-  flex: 0 0 100%;
-  width: 100%;
-  min-width: 100%;
-  min-height: 550px;
-  box-sizing: border-box;
-
-  display: grid;
-  grid-template-columns: 42% 1fr;
-  align-items: center;
-  gap: 75px;
-
-  padding: 35px 45px;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Portrait photograph */
-.wisdom-photo {
-  position: relative;
-  width: 100%;
-  height: 490px;
-  overflow: hidden;
-  border-radius: 150px 150px 35px 35px;
-  background: #e8eaf5;
-  box-shadow: none !important;
-}
-
-.wisdom-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: inherit;
-}
-
-/* Advisor information */
-.wisdom-content {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  max-width: 700px;
-  min-width: 0;
-}
-
-.wisdom-content .wisdom-role {
-  color: #1557c0;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.wisdom-content h2,
-.wisdom-content h3 {
-  color: #101b38;
-  font-size: clamp(30px, 3.5vw, 48px);
-  font-weight: 900;
-  line-height: 1.15;
-  margin: 22px 0;
-}
-
-.wisdom-content p {
-  color: #687386;
-  font-size: 17px;
-  line-height: 1.9;
-  margin-top: 25px;
-}
-
-/* Remove card decorations */
-.wisdom-card::before,
-.wisdom-card::after,
-.wisdom-content::before,
-.wisdom-content::after {
-  display: none !important;
-}
-
-/* Navigation arrows */
-.wisdom-prev,
-.wisdom-next {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: white;
-  color: #1557c0;
-  border: 1px solid #e1e6f1;
-  box-shadow: 0 5px 20px rgba(20,40,90,.07);
-  cursor: pointer;
-  transition: .3s ease;
-}
-
-.wisdom-prev:hover,
-.wisdom-next:hover {
-  background: #1557c0;
-  color: white;
-  transform: translateY(-3px);
-}
-
-/* Slider dots */
-.wisdom-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 30px;
-}
-
-.wisdom-dots button {
-  width: 9px;
-  height: 9px;
-  border: none;
-  border-radius: 50%;
-  background: #cbd2e1;
-  cursor: pointer;
-  transition: .3s ease;
-}
-
-.wisdom-dots button.active {
-  width: 25px;
-  border-radius: 20px;
-  background: linear-gradient(90deg,#1557c0,#a64fd0);
-}
-
-/* Remove old progress bar */
-.wisdom-progress,
-.wisdom-progress-track {
-  display: none !important;
-}
-
-/* Mobile layout */
-@media (max-width: 700px) {
-
-  .wisdom-section {
-    padding: 55px 0;
-  }
-
-  .wisdom-slider {
-    grid-template-columns: 28px minmax(0,1fr) 28px;
-    gap: 7px;
-  }
-
-  .wisdom-card {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 15px 8px;
-    min-height: auto;
-  }
-
-  .wisdom-photo {
-    width: 100%;
-    height: 340px;
-    max-width: 300px;
-    margin: 0 auto;
-    border-radius: 110px 110px 22px 22px;
-  }
-
-  .wisdom-content {
-    width: 100%;
-    text-align: center;
-    margin: auto;
-  }
-
-  .wisdom-content h2,
-  .wisdom-content h3 {
-    font-size: 27px;
-    margin: 12px 0;
-  }
-
-  .wisdom-content p {
-    font-size: 14px;
-    line-height: 1.8;
-    text-align: left;
-  }
-
-  .wisdom-prev,
-  .wisdom-next {
-    width: 28px;
-    height: 28px;
-    font-size: 11px;
   }
 }
